@@ -1,0 +1,90 @@
+.navbar {
+    position: relative;
+    height: 100vh;
+    width: 264px;
+    background-color: #0f1a34;
+}
+.logo {
+    font-size: 26px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #182444;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 26px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.nav-link:hover {
+    background-color: #091023;
+    color: #fff;
+}
+.display-flex {
+    display: flex;
+}
+.admin-product__img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.ta-td{
+    height: 118px;
+    display: flex;
+    align-items: center;
+}
+.mgb-30{
+    margin-bottom: 30px;
+}
+.admin-list__row{
+    border-bottom: 1px solid #091023;
+}
+.admin-img{
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
+.admin-col{
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.admin-container{
+    height: 100vh;
+}
+.admin-nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.page-link{
+    margin: 0 10px;
+}
+.admin-col__content{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 100px;
+}
+.display-flex-ta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+label{
+    width: 180px;
+}
