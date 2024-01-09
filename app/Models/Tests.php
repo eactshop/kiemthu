@@ -11,5 +11,7 @@ class Tests extends Model
     protected $table = 'test';
     protected $fillable = [
         'test',
+        'gia',
+        'soluong'
     ];
 }

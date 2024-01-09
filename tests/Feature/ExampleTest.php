@@ -9,27 +9,30 @@ class TestControllerTest extends TestCase
 {
     public function testPostMethod()
     {
-        // Tạo dữ liệu giả định cho request
-        $data = ['test' => 'Test data 1'];
+        // Test case
+        $dataname = ['tuananh', 'tuananh1', 'aaaa'];
+        $dataprice = ['10', '10', '245'];
+        $datasl = ['10', '10', '123'];
 
-        // Gửi một POST request tới route của TestController
-        $response = $this->post('/test', $data);
+        // Sử dụng vòng lặp để gửi từng test case đến route của TestController
+        foreach (array_map(null, $dataname, $dataprice, $datasl) as [$name, $price, $quantity]) {
+            $response = $this->post('/test', ['test' => $name, 'testprice' => $price, 'testsl' => $quantity]);
 
-        // Kiểm tra xem request có được xử lý thành công không
-        $response->assertStatus(200);
+            // Kiểm tra xem request có được xử lý thành công không
+            $response->assertStatus(200);
 
-        // Kiểm tra xem dữ liệu đã được thêm vào cơ sở dữ liệu chưa
-        $this->assertDatabaseHas('test', [
-            'test' => 'Test data 1',
-        ]);
-        // Kiểm tra xem view có chứa thông báo thành công không
-        $response->assertViewHas('successMessage', 'Thêm thành công!');
+            // Kiểm tra xem dữ liệu đã được thêm vào cơ sở dữ liệu chưa
+            $this->assertDatabaseHas('test', ['test' => $name, 'gia' => $price, 'soluong' => $quantity]);
+
+            // Kiểm tra xem view có chứa thông báo thành công không
+            $response->assertViewHas('successMessage', 'Thêm sản phẩm thành công!');
+        }
     }
 
     public function testDeleteMethod()
     {
         // Tạo một bản ghi để xóa
-        $test = Tests::create(['test' => 'Test data to delete']);
+        $test = Tests::create(['test' => 'taaaaaa', 'gia' => '456', 'soluong' => '345']);
 
         // Gửi DELETE request tới route của TestController để xóa bản ghi với ID của bản ghi vừa tạo
         $response = $this->delete('/delete-test', ['testdelete' => $test->id]);

@@ -28,13 +28,22 @@
                 @csrf
                 <label for="test">Tên sản phẩm test:</label>
                 <input type="text" id="test" name="test" required><br><br>
+                <label for="testprice">Giá sản phẩm test:</label>
+                <input type="text" id="testprice" name="testprice" required><br><br>
+                <label for="testsl">Số lượng sản phẩm test:</label>
+                <input type="text" id="testsl" name="testsl" required><br><br>
                 <input style="margin-bottom: 30px" type="submit" value="Thêm sản phẩm">
             </form>
             @if (isset($successMessage))
                 <div class="alert alert-success">
                     {{ $successMessage }}
                 </div>
-            @endif
+            @endif 
+            @if (isset($errorMessage))
+                <div class="alert alert-erro">
+                    {{ $errorMessage }}
+                </div>
+            @endif 
         </div>
     </div>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
